@@ -1,0 +1,411 @@
+@@@ F1 F1-carte-apprenant.js
+F1 — Ma carte d'apprenant (Niveau 1 — Facile)
+
+Objectif : choisir le bon mot-clé (const ou let) et reconnaître les 5 types primitifs.
+Contexte : Kadea prépare les badges de la promo et a besoin de ta fiche.
+
+Consignes :
+1. Déclare prenom, age, commune, estInscrit, surnom (sans valeur) et ancienneFormation (valeur null).
+2. Choisis const ou let pour chacune et justifie ton choix en commentaire.
+3. Affiche ta fiche avec un seul gabarit littéral (une seule chaîne construite par interpolation).
+4. Affiche le typeof de chaque variable.
+
+Résultat attendu :
+Je m'appelle Grâce, j'ai 22 ans et j'habite à Lemba.
+puis : string, number, string, boolean, undefined, object
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
+@@@ starter
+@@@ F2 F2-convertisseur.js
+F2 — Le convertisseur de saisie (Niveau 1 — Facile)
+
+Objectif : comprendre qu'une saisie est du texte et la convertir avec Number().
+Contexte : un formulaire de recharge mobile money renvoie toujours le montant sous forme de texte.
+
+Consignes :
+1. Déclare const saisie = '2500'; et affiche saisie + 500.
+2. Explique en commentaire pourquoi le résultat est faux.
+3. Corrige avec Number() et affiche le bon total.
+4. Avant de les tester, écris tes prédictions pour Number(''), Number('abc'), Number(' 42 ') et Number(true), puis vérifie.
+
+Résultat attendu :
+2500500, puis 3000 ; les prédictions vérifiées : 0, NaN, 42, 1.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
+@@@ starter
+@@@ F3 F3-pair-impair.js
+F3 — Pair ou impair : le tirage des tickets (Niveau 1 — Facile)
+
+Objectif : utiliser le modulo % dans une condition avec ===.
+Contexte : à la tombola de Kadea, les tickets pairs gagnent un tote bag, les impairs un stylo.
+
+Consignes :
+1. Déclare const numeroTicket = 17;.
+2. Avec % et un if / else, affiche le lot gagné.
+3. Teste avec 17, 24 et 0.
+
+Résultat attendu :
+Ticket 17 : impair, tu gagnes un stylo.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair.
+@@@ starter
+@@@ F4 F4-controleur-bus.js
+F4 — Le contrôleur du bus (Niveau 1 — Facile)
+
+Objectif : écrire un ternaire simple et un if / else if / else à trois branches.
+Contexte : un bus Transco applique un tarif selon l'âge du passager (tarifs fictifs).
+
+Consignes :
+1. Déclare const age = 16;.
+2. Avec un ternaire, crée statut qui vaut 'majeur' ou 'mineur'.
+3. Avec if / else if / else, calcule tarif : moins de 5 ans gratuit, moins de 18 ans 500 FC, sinon 1 000 FC.
+4. Affiche les deux résultats dans une phrase.
+
+Résultat attendu :
+Statut : mineur — Tarif : 500 FC
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
+@@@ starter
+@@@ F5 F5-fonction-flechee.js
+F5 — Ma première fonction fléchée (Niveau 1 — Facile)
+
+Objectif : transformer une fonction classique en fonction fléchée et utiliser son return.
+Contexte : l'accueil de Kadea veut un message de bienvenue automatique.
+
+Consignes :
+1. Recopie function saluer(prenom) { return 'Mbote ' + prenom + ' !'; }.
+2. Réécris-la en fonction fléchée avec un gabarit littéral, sur une seule ligne.
+3. Écris carre, une fonction fléchée qui renvoie le carré d'un nombre.
+4. Affiche saluer('Lys') et carre(7).
+
+Astuce : deux fonctions ne peuvent pas porter le même nom. Renomme la version classique
+(ex. saluerClassique) ou mets-la en commentaire : la version fléchée doit s'appeler saluer.
+
+Résultat attendu :
+Mbote Lys ! puis 49.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on enlever return et les accolades ?
+@@@ starter
+@@@ F6 F6-compte-a-rebours.js
+F6 — Le compte à rebours (Niveau 1 — Facile)
+
+Objectif : maîtriser les 3 parties d'une boucle for qui descend.
+Contexte : le lancement du projet de fin de module se fait avec un compte à rebours.
+
+Consignes :
+1. Affiche les nombres de 10 à 1, puis Décollage !.
+2. Modifie la boucle pour n'afficher que les nombres pairs.
+3. Dans la première version, saute le nombre 5 sans changer la condition de la boucle.
+
+Résultat attendu (étape 3) :
+10, 9, 8, 7, 6, 4, 3, 2, 1, Décollage !
+
+Recherche (à rédiger dans RECHERCHES.md) :
+À quoi sert le mot-clé continue ? Quelle différence avec break ?
+@@@ starter
+@@@ M1 M1-fizzbuzz.js
+M1 — FizzBuzz kinois (Niveau 2 — Moyen)
+
+Objectif : combiner boucle for, modulo et ordre des conditions.
+Contexte : un jeu de rapidité pour réveiller la promo le lundi matin.
+
+Consignes :
+1. Parcours les nombres de 1 à 30.
+2. Multiple de 3 : affiche Malewa. Multiple de 5 : Wewa. Multiple de 3 et de 5 : MalewaWewa. Sinon, le nombre.
+3. Explique en commentaire pourquoi l'ordre de tes conditions est important.
+
+Résultat attendu (15 premiers) :
+1, 2, Malewa, 4, Wewa, Malewa, 7, 8, Malewa, Wewa, 11, Malewa, 13, 14, MalewaWewa
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeurs ?
+@@@ starter
+@@@ M2 M2-dab.js
+M2 — Le distributeur automatique (DAB) (Niveau 2 — Moyen)
+
+Objectif : écrire une fonction fléchée qui vérifie plusieurs règles dans le bon ordre et renvoie un message.
+Contexte : le DAB ne distribue que des billets de 5 000 FC et refuse les retraits au-delà de 500 000 FC.
+
+Consignes :
+1. Écris retirer(solde, montant) qui renvoie un message (pas de console.log dans la fonction).
+2. Refuse un montant négatif ou non multiple de 5 000, puis un montant au-delà du plafond, puis un montant supérieur au solde.
+3. Si tout est bon, renvoie le nouveau solde.
+4. Teste les 4 cas ci-dessous.
+
+Résultat attendu :
+retirer(100000, 25000)   -> Retrait accepté. Nouveau solde : 75000 FC
+retirer(100000, 12000)   -> Montant invalide : multiples de 5 000 FC uniquement
+retirer(1000000, 600000) -> Plafond dépassé : 500 000 FC maximum
+retirer(20000, 50000)    -> Solde insuffisant
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Comment afficher 75000 sous la forme 75 000 avec toLocaleString() ?
+@@@ starter
+@@@ M3 M3-champs-vides.js
+M3 — Le détecteur de champs vides (Truthy / Falsy) (Niveau 2 — Moyen)
+
+Objectif : prédire si une valeur est truthy ou falsy.
+Contexte : le formulaire d'inscription Kadea doit refuser les champs vides.
+
+Consignes :
+1. Écris estRempli, une fonction fléchée qui renvoie 'rempli' ou 'vide' avec un ternaire, sans comparaison (if (valeur) suffit).
+2. Avant de tester, note tes prédictions pour : '', 'Esther', 0, 42, null, undefined, NaN, ' ', '0', false.
+3. Teste et compare.
+
+Résultat attendu :
+vide, rempli, vide, rempli, vide, vide, vide, rempli, rempli, vide
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Quelle est la liste complète des valeurs falsy en JavaScript ? (Indice : il y en a plus que dans cet exercice.)
+@@@ starter
+@@@ M4 M4-score-defaut.js
+M4 — Le score par défaut : || contre ?? (Niveau 2 — Moyen)
+
+Objectif : utiliser le court-circuit pour donner une valeur par défaut, et éviter son piège.
+Contexte : l'application du quiz Canvas affiche « aucun » quand un apprenant n'a pas encore de score.
+
+Consignes :
+1. Écris une fonction fléchée afficherScore(score) qui renvoie le texte « Score : » suivi de score || 'aucun', avec un gabarit littéral.
+2. Teste avec 15, 0 et undefined. Explique le bug du cas 0.
+3. Corrige le bug avec l'opérateur ??.
+4. Bonus : écris estConnecte && console.log('Bienvenue !') et explique quand le message s'affiche.
+
+Astuce : la version corrigée doit s'appeler afficherScore (renomme l'ancienne, ex. afficherScoreBug).
+
+Résultat attendu :
+avant correction : 15, aucun, aucun ; après correction : 15, 0, aucun.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de || ?
+@@@ starter
+@@@ M5 M5-vitre-teintee.js
+M5 — La vitre teintée (portée de bloc) (Niveau 2 — Moyen)
+
+Objectif : prédire où une variable existe et corriger une ReferenceError.
+
+Consignes :
+1. Le code ci-dessous est déjà recopié dans la zone de travail : écris tes prédictions en commentaire avant de l'exécuter.
+2. Exécute-le : pourquoi la fonction afficher ne s'exécute-t-elle jamais ?
+3. Corrige le code pour que tout s'affiche sans erreur, sans déplacer les déclarations dans les blocs.
+
+Code fourni :
+const ville = 'Kinshasa';
+if (true) {
+  const commune = 'Gombe';
+  console.log(ville);
+}
+console.log(commune);
+
+const afficher = () => {
+  const secret = 'pondu';
+  return secret;
+};
+console.log(afficher());
+console.log(secret);
+
+Résultat attendu :
+avant correction : Kinshasa puis ReferenceError: commune is not defined.
+après correction : tout s'affiche (Kinshasa, Gombe, pondu…) sans aucune erreur.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting ».
+@@@ starter
+// Mes prédictions (avant d'exécuter) :
+//
+
+const ville = 'Kinshasa';
+if (true) {
+  const commune = 'Gombe';
+  console.log(ville);
+}
+console.log(commune);
+
+const afficher = () => {
+  const secret = 'pondu';
+  return secret;
+};
+console.log(afficher());
+console.log(secret);
+@@@ M6 M6-detective-return.js
+M6 — Le détective du return (Niveau 2 — Moyen)
+
+Objectif : distinguer return et console.log() et traquer les undefined.
+
+Consignes : chacune des trois fonctions de la zone de travail a un bug.
+Trouve-le, explique-le en commentaire, corrige-le.
+
+Code fourni :
+const doubler = (n) => { n * 2; };
+console.log(doubler(4));           // undefined ?!
+
+const calculerTva = (prix) => { console.log(prix * 0.16); };
+const total = calculerTva(1000) + 500;
+console.log(total);                // NaN ?!
+
+const saluer = (prenom) => {
+  return
+    `Mbote ${prenom}`;
+};
+console.log(saluer('Ney'));        // undefined ?!
+
+Résultat attendu après correction :
+8, 660, Mbote Ney
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Le troisième bug vient de l'« insertion automatique de point-virgule » (ASI). Explique ce mécanisme en 3 lignes.
+@@@ starter
+const doubler = (n) => { n * 2; };
+console.log(doubler(4));           // undefined ?!
+
+const calculerTva = (prix) => { console.log(prix * 0.16); };
+const total = calculerTva(1000) + 500;
+console.log(total);                // NaN ?!
+
+const saluer = (prenom) => {
+  return
+    `Mbote ${prenom}`;
+};
+console.log(saluer('Ney'));        // undefined ?!
+@@@ M7 M7-tirelire.js
+M7 — La tirelire numérique (Niveau 2 — Moyen)
+
+Objectif : utiliser une boucle for avec un accumulateur et une condition à l'intérieur.
+Contexte : Patience épargne 2 000 FC par semaine ; toutes les 4 semaines, sa tante ajoute un bonus de 1 000 FC.
+
+Consignes :
+1. Simule 12 semaines avec une boucle.
+2. À chaque tour, affiche : Semaine 4 : 9000 FC (bonus !).
+3. Affiche le total final.
+
+Résultat attendu :
+Total après 12 semaines : 27000 FC
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Cite tous les opérateurs d'affectation composée (+=, -=…) et donne un exemple pour chacun.
+@@@ starter
+@@@ M8 M8-batterie.js
+M8 — La batterie qui se décharge (Niveau 2 — Moyen)
+
+Objectif : écrire une boucle while avec une condition d'arrêt sûre et un compteur.
+Contexte : pendant un délestage, ton téléphone perd 15 % de batterie par heure.
+
+Consignes :
+1. Pars de batterie = 100 et d'un compteur heures = 0.
+2. Tant que la batterie est au-dessus de 20 %, retire 15 % et ajoute une heure.
+3. Affiche le résultat final.
+4. Teste en partant de 15 % : combien de tours fait la boucle ?
+
+Résultat attendu :
+Après 6 h, batterie à 10 % : branche ton téléphone !
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Quelle est la différence entre while et do...while ? Que donnerait l'étape 4 avec un do...while ?
+@@@ starter
+@@@ A1 A1-livraison.js
+A1 — Kadea Express v2 : le calculateur de livraison (Niveau 3 — Avancé)
+
+Objectif : écrire une fonction avec paramètre par défaut et plusieurs règles métier, et arrondir un résultat de calcul décimal.
+Contexte : Kadea Express livre des colis dans Kinshasa (tarifs fictifs).
+
+Consignes :
+1. Écris calculerLivraison(distanceKm, poidsKg, estUrgent = false).
+2. Tarif de base : jusqu'à 5 km, 2 000 FC ; jusqu'à 15 km, 4 000 FC ; au-delà, 7 000 FC.
+3. Plus de 10 kg : + 1 500 FC. Urgent : tout le montant × 1,5.
+4. Ajoute la TVA de 16 % et arrondis à l'entier avec Math.round().
+
+Résultat attendu :
+calculerLivraison(3, 2)         -> 2320
+calculerLivraison(10, 12, true) -> 9570
+calculerLivraison(20, 5)        -> 8120
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() est un piège si on veut continuer à calculer ?
+@@@ starter
+@@@ A2 A2-paie.js
+A2 — Le moteur de paie v2 (Niveau 3 — Avancé)
+
+Objectif : parcourir un tableau avec .forEach(), accumuler un total et appliquer une règle d'heures supplémentaires.
+Contexte : Kadea Tech paie ses techniciens 2 500 FC de l'heure ; au-delà de 40 h par semaine, chaque heure est payée 1,5 fois.
+
+Consignes :
+1. Pars de const heuresSemaine = [8, 9, 10, 8, 7, 6]; (du lundi au samedi).
+2. Calcule le total des heures avec .forEach() et un accumulateur.
+3. Écris calculerSalaire(heures, tauxHoraire = 2500) qui gère les heures supplémentaires.
+4. Avec une boucle for, trouve le jour le plus chargé.
+
+Résultat attendu :
+Total : 48 h — Salaire : 130000 FC ; jour le plus chargé : mercredi (10 h).
+
+Recherche (à rédiger dans RECHERCHES.md) :
+La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et réécris l'étape 2 avec elle.
+@@@ starter
+@@@ A3 A3-inventaire.js
+A3 — L'inventaire en console (Niveau 3 — Avancé)
+
+Objectif : manipuler un tableau d'objets avec .filter(), .map() et .find(), et gérer le cas undefined.
+Contexte : la boutique de Kadea Academy veut suivre son stock (prix fictifs).
+
+Consignes :
+1. Crée ce tableau d'objets (propriétés : id, nom, categorie, prixFC, stock) :
+   101 | Clé USB 32 Go    | Informatique | 14000 | 25
+   102 | Sac à dos Kadea  | Accessoires  | 42000 | 0
+   103 | Souris sans fil  | Informatique | 28000 | 12
+   104 | Gourde isotherme | Accessoires  | 21000 | 8
+   105 | Casque audio     | Informatique | 70000 | 0
+   106 | Carnet de notes  | Papeterie    | 7000  | 40
+2. Affiche-le avec console.table().
+3. Avec .filter(), garde la catégorie Informatique.
+4. Avec .map(), ajoute un prixUSD arrondi, avec const TAUX = 2800; (taux fictif).
+5. Avec .find(), écris chercherProduit(id) qui renvoie le produit ou le message Produit introuvable.
+6. Compte les produits en rupture de stock.
+
+Résultat attendu :
+3 produits Informatique (101, 103, 105) ; prix USD 5, 15, 10, 8, 25, 3 ;
+chercherProduit(104) -> la gourde ; chercherProduit(999) -> Produit introuvable ; 2 produits en rupture.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Comment afficher seulement les colonnes nom et stock avec console.table() ? Et que renvoient .find() et .filter() quand rien ne correspond ?
+@@@ starter
+@@@ A4 A4-classement.js
+A4 — Le classement de la promo (Niveau 3 — Avancé)
+
+Objectif : combiner fonctions, boucles, conditions et méthodes de tableau dans un même programme.
+Contexte : un formateur veut le bulletin d'une promo fictive.
+
+Consignes :
+1. Crée un tableau d'objets : Amani [14, 16, 15], Bijou [17, 18, 16], Christian [8, 11, 9], Divine [12, 10, 14], Exaucé [16, 15, 19].
+2. Écris calculerMoyenne(notes) avec une boucle et un accumulateur, arrondie à une décimale.
+3. Avec .map(), crée un bulletin avec nom, moyenne et mention : 16 et plus « Excellent », 10 et plus « Admis », sinon « Rattrapage ».
+4. Avec .filter(), compte les admis (mention Excellent ou Admis) ; avec .find(), trouve le premier « Excellent ».
+5. Affiche le bulletin avec console.table().
+
+Résultat attendu :
+moyennes 15, 17, 9.3, 12, 16.7 ; 4 admis ; premier Excellent : Bijou.
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Comment classer le bulletin de la meilleure à la moins bonne moyenne avec .sort() ? Pourquoi .sort() modifie-t-il le tableau d'origine, et comment l'éviter ?
+@@@ starter
+@@@ A5 A5-nombre-mystere.js
+A5 — Le nombre mystère (Niveau 3 — Avancé)
+
+Objectif : construire un jeu complet avec while, prompt(), Number(), conditions et compteur.
+Contexte : le jeu de la pause déjeuner : deviner un nombre entre 1 et 100 en 7 essais maximum.
+
+Consignes :
+1. Tire un nombre entier aléatoire entre 1 et 100 avec Math.random() et Math.floor().
+2. Tant que le joueur n'a pas trouvé et qu'il lui reste des essais, demande un nombre avec prompt().
+3. Refuse une saisie qui n'est pas un nombre (sans compter l'essai).
+4. Réponds « plus grand », « plus petit » ou « trouvé en X essais ! ».
+5. Si les 7 essais sont épuisés, révèle le nombre.
+
+Résultat attendu :
+un jeu jouable dans la console du navigateur, qui ne plante jamais, même si on tape « abc ».
+
+Recherche (à rédiger dans RECHERCHES.md) :
+Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
+@@@ starter

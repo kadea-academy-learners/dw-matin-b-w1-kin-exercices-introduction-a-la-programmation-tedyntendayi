@@ -1,0 +1,17 @@
+{
+  "name": "kadea-semaine-13-evaluation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Évaluation automatique et déterministe des exercices JavaScript de la semaine 13",
+  "main": "evaluate.js",
+  "scripts": {
+    "evaluate": "node evaluate.js ../.."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "acorn": "8.14.0",
+    "acorn-walk": "8.3.4"
+  }
+}

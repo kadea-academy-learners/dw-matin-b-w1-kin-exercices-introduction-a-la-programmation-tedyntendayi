@@ -1,0 +1,61 @@
+name: Évaluation automatique
+
+on:
+  push:
+    branches: [develop]
+    paths-ignore:
+      - evaluation.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: evaluation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evaluation:
+    name: Évaluer la semaine 13
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le dépôt (historique complet pour compter les commits)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer l'évaluateur
+        run: npm ci --prefix .github/evaluation --no-audit --no-fund
+
+      - name: Évaluer les exercices
+        run: node .github/evaluation/evaluate.js . evaluation.md
+
+      - name: Afficher le résultat dans le résumé du job
+        run: cat evaluation.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publier evaluation.md sur develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evaluation.md
+          if git diff --cached --quiet; then
+            echo "evaluation.md inchangé"
+            exit 0
+          fi
+          git commit -m "chore: évaluation automatique [skip ci]"
+          git pull --rebase -X theirs origin develop
+          git push origin HEAD:develop
+
+      - name: Conserver evaluation.md comme artefact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation
+          path: evaluation.md
+          if-no-files-found: ignore
