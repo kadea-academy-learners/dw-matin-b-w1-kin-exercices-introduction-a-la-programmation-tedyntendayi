@@ -51,3 +51,4 @@ const afficher = () => {
 };
 console.log(afficher());
 console.log(secret);
+ 
