@@ -25,6 +25,7 @@ const age = 16;
 
 const statut = age >= 18 ? 'majeur' : 'mineur';
 
+
 // let : tarif reçoit sa valeur dans le if / else if / else
 let tarif;
 if (age < 5) {
