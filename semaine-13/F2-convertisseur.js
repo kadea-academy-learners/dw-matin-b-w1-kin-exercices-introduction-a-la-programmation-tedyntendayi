@@ -31,4 +31,4 @@ console.log(Number(saisie) + 500);
 console.log(Number(''));
 console.log(Number('abc'));
 console.log(Number(' 42 '));
-console.log(Number(true));
+console.log(Number(true)); 

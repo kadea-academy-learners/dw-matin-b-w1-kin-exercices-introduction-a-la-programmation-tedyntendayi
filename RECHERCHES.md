@@ -28,18 +28,18 @@ typeof null renvoie “object” à cause d’un bug présent depuis les débuts
 **Question :** Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-NaN signifie “Not a Number” : on l’obtient quand une conversion en nombre échoue. NaN === NaN est faux car NaN n’est égal à aucune valeur, même pas à lui-même. On le détecte avec Number.isNaN().
+NaN signifie "Not a Number" : on l'obtient quand une conversion en nombre échoue, par exemple Number('abc'). NaN === NaN renvoie false car NaN n'est égal à aucune valeur, pas même à lui-même. Pour le détecter, on utilise Number.isNaN().
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+console.log(NaN === NaN, Number.isNaN(NaN));
+// résultat : false true
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/NaN
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude d'expliquer NaN et Number.isNaN. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/NaN
 
 ## F3 — Pair ou impair : le tirage des tickets
 
