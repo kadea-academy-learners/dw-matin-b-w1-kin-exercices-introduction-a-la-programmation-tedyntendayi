@@ -83,36 +83,40 @@ console.log(age < 5 ? 'gratuit' : age < 18 ? '500 FC' : '1 000 FC');
 **Question :** Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on enlever return et les accolades ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-...
+On peut enlever les parenthèses autour du paramètre quand il y en a un seul et sans valeur par défaut (n => n * 2). Avec zéro ou plusieurs paramètres, elles restent obligatoires. On peut enlever return et les accolades quand le corps est une seule expression : sa valeur est alors renvoyée automatiquement.
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+const carre = n => n * n;
+console.log(carre(7));
+// résultat : 49
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude d'expliquer la syntaxe courte des fonctions fléchées. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 ## F6 — Le compte à rebours
 
 **Question :** À quoi sert le mot-clé continue ? Quelle différence avec break ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-...
+continue saute la fin du tour en cours et passe directement au tour suivant de la boucle. break arrête complètement la boucle. Dans l'exercice, continue permet d'ignorer le nombre 5 mais de continuer à compter jusqu'à 1.
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) { continue; }
+  console.log(i);
+}
+// résultat : 1 2 4 5
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/continue
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude la différence entre continue et break. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/continue
 
 ## M1 — FizzBuzz kinois
 
@@ -274,36 +278,37 @@ console.log(tours);
 **Question :** Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() est un piège si on veut continuer à calculer ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-...
+JavaScript stocke les nombres décimaux en binaire, et 0.1 ou 0.2 ne s'écrivent pas exactement dans ce système : 0.1 + 0.2 donne 0.30000000000000004. toFixed() est un piège car il renvoie un texte (string) : si on continue à calculer avec, le + colle les textes au lieu d'additionner. Il vaut mieux arrondir à la fin, avec Math.round().
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+console.log(0.1 + 0.2, typeof (0.5).toFixed(1));
+// résultat : 0.30000000000000004 string
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude pourquoi 0.1 + 0.2 n'est pas égal à 0.3 et pourquoi toFixed est un piège. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 
 ## A2 — Le moteur de paie v2
 
 **Question :** La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et réécris l'étape 2 avec elle.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-...
+.reduce() parcourt un tableau et combine tous les éléments en une seule valeur, avec un accumulateur qui commence à une valeur de départ. Pour le total des heures : heuresSemaine.reduce((somme, heures) => somme + heures, 0). Cela remplace le forEach avec une variable qu'on modifie à la main.
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+const heuresSemaine = [8, 9, 10, 8, 7, 6];
+console.log(heuresSemaine.reduce((somme, heures) => somme + heures, 0));
+// résultat : 48
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude d'expliquer reduce. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 ## A3 — L'inventaire en console
 
