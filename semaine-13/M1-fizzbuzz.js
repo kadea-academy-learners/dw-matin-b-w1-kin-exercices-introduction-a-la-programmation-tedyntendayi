@@ -20,4 +20,19 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+// L'ordre compte : un multiple de 15 est aussi multiple de 3 et de 5.
+// Si on testait 3 ou 5 d'abord, 15 afficherait seulement Malewa ou Wewa.
+// Il faut donc tester "3 et 5" en premier.
+for (let i = 1; i <= 30; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log('MalewaWewa');
+    } else if (i % 3 === 0) {
+        console.log('Malewa');
+    } else if (i % 5 === 0) {
+        console.log('Wewa');
+    } else {
+        console.log(i);
+    }
+}
+
 
