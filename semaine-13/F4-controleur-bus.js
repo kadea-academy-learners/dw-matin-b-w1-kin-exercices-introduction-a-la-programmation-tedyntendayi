@@ -21,4 +21,18 @@ Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+const age = 16;
 
+const statut = age >= 18 ? 'majeur' : 'mineur';
+
+// let : tarif reçoit sa valeur dans le if / else if / else
+let tarif;
+if (age < 5) {
+    tarif = 'gratuit';
+} else if (age < 18) {
+    tarif = '500 FC';
+} else {
+    tarif = '1 000 FC';
+}
+
+console.log(`Statut : ${statut} — Tarif : ${tarif}`);

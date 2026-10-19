@@ -11,7 +11,7 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+typeof null renvoie “object” à cause d’un bug présent depuis les débuts de JavaScript. null n’est pas un objet, il signifie “aucune valeur”. Le bug n’a jamais été corrigé car cela casserait de nombreux sites existants. 
 
 **Mon test dans la console :**
 
@@ -29,7 +29,7 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+NaN signifie “Not a Number” : on l’obtient quand une conversion en nombre échoue. NaN === NaN est faux car NaN n’est égal à aucune valeur, même pas à lui-même. On le détecte avec Number.isNaN().
 
 **Mon test dans la console :**
 
@@ -47,7 +47,7 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+-7 % 2 renvoie -1 car le reste prend le signe du premier nombre. % 2 === 1 rate les impairs négatifs, alors que % 2 !== 0 détecte tous les impairs. 
 
 **Mon test dans la console :**
 
@@ -65,7 +65,8 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+On peut enchaîner plusieurs ternaires, mais c’est déconseillé : le code devient vite illisible et difficile à déboguer. Pour 3 cas ou plus, if / else if / else est plus clair.
+
 
 **Mon test dans la console :**
 
