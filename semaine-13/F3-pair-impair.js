@@ -22,6 +22,7 @@ Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt 
 
 const numeroTicket = 17;
 
+
 if (numeroTicket % 2 === 0) {
     console.log(`Ticket ${numeroTicket} : pair, tu gagnes un tote bag.`);
 } else {

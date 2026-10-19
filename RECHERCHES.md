@@ -46,37 +46,37 @@ console.log(NaN === NaN, Number.isNaN(NaN));
 **Question :** Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
--7 % 2 renvoie -1 car le reste prend le signe du premier nombre. % 2 === 1 rate les impairs négatifs, alors que % 2 !== 0 détecte tous les impairs. 
+-7 % 2 renvoie -1, parce qu'en JavaScript le reste d'une division prend le signe du premier nombre. Tester % 2 === 1 ne détecte que les impairs positifs, car pour un impair négatif le reste vaut -1 et -1 === 1 est faux. Tester % 2 !== 0 est plus sûr : un nombre impair a toujours un reste différent de 0, qu'il soit positif ou négatif.
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+console.log(-7 % 2);
+// résultat : -1
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remainder
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude d'expliquer pourquoi % 2 !== 0 est plus sûr que % 2 === 1. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remainder
 
 ## F4 — Le contrôleur du bus
 
 **Question :** Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
-On peut enchaîner plusieurs ternaires, mais c’est déconseillé : le code devient vite illisible et difficile à déboguer. Pour 3 cas ou plus, if / else if / else est plus clair.
-
+Oui, on peut enchaîner plusieurs ternaires, par exemple a ? b : c ? d : e. Mais c'est souvent déconseillé, car le code devient vite difficile à lire et à déboguer, et on peut se tromper dans l'ordre des conditions. Avec trois cas ou plus, un if / else if / else est plus clair.
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
+const age = 16;
+console.log(age < 5 ? 'gratuit' : age < 18 ? '500 FC' : '1 000 FC');
+// résultat : 500 FC
 ```
 
-**Source :** 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
-**IA utilisée ? (prompt + vérification sur MDN) :** non
+**IA utilisée ? (prompt + vérification sur MDN) :** oui, j'ai demandé à Claude si on peut enchaîner des ternaires et pourquoi c'est déconseillé. J'ai vérifié sur MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 ## F5 — Ma première fonction fléchée
 
